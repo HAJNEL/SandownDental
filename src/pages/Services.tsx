@@ -2,12 +2,13 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, ChevronRight, ChevronLeft, Sparkles, Shield, Heart, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { assetUrl } from '../lib/utils';
 
 const serviceSections = [
   {
     id: "general",
     title: "General & Preventative Care",
-    images: ["/assets/stock/stock8.jpeg"],
+    images: [assetUrl('/assets/stock/stock8.jpeg')],
     content: [
       {
         subtitle: "Comprehensive Oral Examinations",
@@ -22,7 +23,7 @@ const serviceSections = [
   {
     id: "restorative",
     title: "Restorative Dentistry",
-    images: ["/assets/stock/stock9.jpeg", "/assets/stock/stock12.jpeg", "/assets/stock/stock11.jpeg"],
+    images: [assetUrl('/assets/stock/stock9.jpeg'), assetUrl('/assets/stock/stock12.jpeg'), assetUrl('/assets/stock/stock11.jpeg')],
     content: [
       {
         subtitle: "Restorations (Fillings)",
@@ -41,7 +42,7 @@ const serviceSections = [
   {
     id: "replacement",
     title: "Tooth Replacement Solutions",
-    images: ["/assets/stock/stock10.jpeg", "/assets/stock/stock13.jpeg", "/assets/stock/stock14.jpeg"],
+    images: [assetUrl('/assets/stock/stock10.jpeg'), assetUrl('/assets/stock/stock13.jpeg'), assetUrl('/assets/stock/stock14.jpeg')],
     content: [
       {
         subtitle: "Dental Implants",
@@ -56,7 +57,7 @@ const serviceSections = [
   {
     id: "ortho",
     title: "Orthodontics & Facial Development",
-    images: ["/assets/stock/stock1.jpeg"],
+    images: [assetUrl('/assets/stock/stock1.jpeg')],
     content: [
       {
         subtitle: "Braces",
@@ -75,7 +76,7 @@ const serviceSections = [
   {
     id: "aesthetic",
     title: "Aesthetic Dentistry",
-    images: ["/assets/stock/stock2.jpeg"],
+    images: [assetUrl('/assets/stock/stock2.jpeg')],
     content: [
       {
         subtitle: "Teeth Whitening",
@@ -90,7 +91,7 @@ const serviceSections = [
   {
     id: "surgical",
     title: "Surgical & Advanced Care",
-    images: ["/assets/stock/stock3.jpeg", "/assets/stock/stock4.jpeg"],
+    images: [assetUrl('/assets/stock/stock3.jpeg'), assetUrl('/assets/stock/stock4.jpeg')],
     content: [
       {
         subtitle: "Routine (Simple) Extractions",
@@ -113,7 +114,7 @@ const serviceSections = [
   {
     id: "paediatric",
     title: "Paediatric Dentistry",
-    images: ["/assets/stock/stock5.jpeg", "/assets/stock/stock7.jpeg"],
+    images: [assetUrl('/assets/stock/stock5.jpeg'), assetUrl('/assets/stock/stock7.jpeg')],
     content: [
       {
         subtitle: "Caring for Small Smiles",
@@ -135,7 +136,7 @@ const serviceSections = [
   {
     id: "referrals",
     title: "Referrals",
-    images: ["/assets/stock/stock6.jpeg"],
+    images: [assetUrl('/assets/stock/stock6.jpeg')],
     content: [
       {
         subtitle: "Our Trusted Network",

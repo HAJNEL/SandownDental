@@ -1,6 +1,7 @@
 import { ArrowRight, Shield, Heart, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { assetUrl } from '../lib/utils';
 
 const features = [
   {
@@ -32,7 +33,7 @@ export default function Home() {
       <section className="relative h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/hero-bg.jpeg"
+            src={assetUrl('/assets/hero-bg.jpeg')}
             alt="Welcoming dentist with patient"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

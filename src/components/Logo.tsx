@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { cn } from '@/src/lib/utils';
+import { cn, assetUrl } from '@/src/lib/utils';
 
 interface LogoProps {
   className?: string;
@@ -14,7 +14,7 @@ export default function Logo({ className, variant = 'color' }: LogoProps) {
       {/* Try to use the logo image first */}
       {!error ? (
         <img 
-          src="/assets/logo.png" 
+          src={assetUrl('/assets/logo.png')} 
           alt="Sandown Dental Logo" 
           className={cn(
             "w-full h-full object-contain",

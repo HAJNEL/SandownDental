@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { assetUrl } from '../lib/utils';
 import { Star, ShieldCheck, Award, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import Logo from '../components/Logo';
 
 const practiceImages = [
-  '/assets/practice/practice3.jpeg',
-  '/assets/practice/practice4.jpeg',
-  '/assets/practice/practice5.jpeg',
+  assetUrl('/assets/practice/practice3.jpeg'),
+  assetUrl('/assets/practice/practice4.jpeg'),
+  assetUrl('/assets/practice/practice5.jpeg'),
 ]; 
 
 export default function AboutUs() {
@@ -128,7 +129,7 @@ export default function AboutUs() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden mb-8 grayscale group-hover:grayscale-0 transition-all duration-500">
                 <img
-                  src="/assets/employees/Gabby.jpeg"
+                  src={assetUrl('/assets/employees/Gabby.jpeg')}
                   alt="Dr. Gabby Paries"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -151,7 +152,7 @@ export default function AboutUs() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden mb-8 grayscale group-hover:grayscale-0 transition-all duration-500">
                 <img
-                  src="/assets/employees/Alicia.png"
+                  src={assetUrl('/assets/employees/Alicia.png')}
                   alt="Dr. Alicia Paries"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
