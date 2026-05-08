@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ShieldCheck, Award, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import Logo from '../components/Logo';
 
 const practiceImages = [
-  '/assets/practice/practice1.jpeg',
   '/assets/practice/practice3.jpeg',
   '/assets/practice/practice4.jpeg',
   '/assets/practice/practice5.jpeg',
@@ -37,17 +36,21 @@ export default function AboutUs() {
             >
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10 group bg-brand-bg-secondary">
                 <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentImage}
-                    src={practiceImages[currentImage]}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    alt="Sandown Dental clinical environment"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                  {practiceImages.map((img, i) =>
+                    i === currentImage ? (
+                      <motion.img
+                        key={img}
+                        src={img}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                        alt="Sandown Dental clinical environment"
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : null
+                  )}
                 </AnimatePresence>
                 
                 {/* Carousel Navigation */}
