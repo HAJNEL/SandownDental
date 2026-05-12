@@ -1,6 +1,7 @@
 import { ArrowRight, Shield, Heart, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { assetUrl } from '../lib/utils';
 
 const features = [
