@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, ChevronRight, ChevronLeft, Sparkles, Shield, Heart, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { assetUrl } from '../lib/utils';
 
 const serviceSections = [
@@ -177,6 +178,10 @@ export default function Services() {
 
   return (
     <div className="pt-20 min-h-screen pb-24 bg-brand-bg-primary">
+      <Helmet>
+        <title>Dental Services in Milnerton | Implants, Braces & General Care</title>
+        <meta name="description" content="Explore comprehensive dental services at Sandown Dental. We offer dental implants, restorative dentistry, orthodontics, teeth whitening, and pediatric care in Sandown." />
+      </Helmet>
       {/* Services Navigation / Jump Links (Carousel) - Moved to top */}
       <div className="sticky top-16 z-40 bg-brand-surface/90 backdrop-blur-md border-b border-brand-border">
         <div className="max-w-7xl mx-auto px-4 relative group">

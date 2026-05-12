@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { assetUrl } from '../lib/utils';
 import { Star, ShieldCheck, Award, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import Logo from '../components/Logo';
@@ -25,6 +26,10 @@ export default function AboutUs() {
 
   return (
     <div className="pt-20 min-h-screen bg-brand-bg-primary">
+      <Helmet>
+        <title>About Sandown Dental | Dr. Gabby & Alicia Paries</title>
+        <meta name="description" content="Meet the expert team at Sandown Dental. Led by Dr. Gabby and Dr. Alicia Paries, we provide family-centric, high-tech dental care in Sandown, Milnerton." />
+      </Helmet>
       {/* Intro Section */}
       <section className="pt-8 pb-20 bg-brand-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

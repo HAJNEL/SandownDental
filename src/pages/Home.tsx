@@ -29,12 +29,17 @@ const features = [
 export default function Home() {
   return (
     <div className="flex flex-col bg-brand-bg-primary">
+      <Helmet>
+        <title>Sandown Dental | Premier Dental Care in Milnerton & Sandown</title>
+        <meta name="description" content="Experience dental excellence at Sandown Dental. Your trusted dentist in Milnerton and Sandown for general checkups, implants, and aesthetic dentistry." />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={assetUrl('/assets/hero-bg.jpeg')}
-            alt="Welcoming dentist with patient"
+            alt="Welcoming dentist with patient at Sandown Dental Milnerton"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -49,7 +54,7 @@ export default function Home() {
             className="max-w-2xl text-brand-text-primary"
           >
             <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6">
-              Where Science <br /> Meets <span className="text-brand-btn-primary italic">Artistry</span>
+              Modern Dental <br /> Care in <span className="text-brand-btn-primary italic">Milnerton</span>
             </h1>
             <p className="text-lg md:text-xl text-brand-text-secondary mb-10 leading-relaxed font-medium">
               Experience dental care redefined. At Sandown Dental, we combine advanced techniques with a personalised touch to transform your oral health and confidence.

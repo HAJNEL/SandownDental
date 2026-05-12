@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Calendar, Send, CheckCircle2 } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Logo from '../components/Logo';
 
 export default function Contact() {
@@ -35,6 +36,10 @@ export default function Contact() {
 
   return (
     <div className="pt-24 min-h-screen bg-brand-bg-primary">
+      <Helmet>
+        <title>Contact Us | Book an Appointment at Sandown Dental</title>
+        <meta name="description" content="Ready for your smile journey? Contact Sandown Dental in Milnerton to book your checkup, cleaning, or consultation. Call 021 007 3534 today." />
+      </Helmet>
       <section className="bg-brand-bg-secondary py-20 px-4 sm:px-6 lg:px-8 border-b border-brand-border">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
