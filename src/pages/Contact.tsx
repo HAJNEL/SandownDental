@@ -6,12 +6,31 @@ import Logo from '../components/Logo';
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success'>('idle');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('sending');
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1500);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "32c8adbb-bb9f-44ce-844c-0cab68000a04");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setFormStatus('success');
+      } else {
+        throw new Error(result.message);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Oops! Something went wrong. Please try again later.");
+      setFormStatus('idle');
+    }
   };
 
   return (
@@ -94,6 +113,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-brand-text-muted uppercase tracking-wider ml-1">First Name</label>
                     <input
+                      name="first_name"
                       required
                       type="text"
                       className="w-full bg-brand-input-bg border border-brand-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-btn-primary/20 focus:bg-white transition-all text-brand-text-primary placeholder:text-brand-text-muted"
@@ -103,6 +123,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-brand-text-muted uppercase tracking-wider ml-1">Last Name</label>
                     <input
+                      name="last_name"
                       required
                       type="text"
                       className="w-full bg-brand-input-bg border border-brand-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-btn-primary/20 focus:bg-white transition-all text-brand-text-primary placeholder:text-brand-text-muted"
@@ -113,6 +134,7 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-brand-text-muted uppercase tracking-wider ml-1">Email Address</label>
                   <input
+                    name="email"
                     required
                     type="email"
                     className="w-full bg-brand-input-bg border border-brand-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-btn-primary/20 focus:bg-white transition-all text-brand-text-primary placeholder:text-brand-text-muted"
@@ -121,7 +143,10 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-brand-text-muted uppercase tracking-wider ml-1">Preferred Service</label>
-                  <select className="w-full bg-brand-input-bg border border-brand-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-btn-primary/20 focus:bg-white transition-all text-brand-text-primary">
+                  <select 
+                    name="service"
+                    className="w-full bg-brand-input-bg border border-brand-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-btn-primary/20 focus:bg-white transition-all text-brand-text-primary"
+                  >
                     <option>General Checkup</option>
                     <option>Cleaning</option>
                     <option>Fillings</option>
@@ -140,6 +165,7 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-brand-text-muted uppercase tracking-wider ml-1">Your Message</label>
                   <textarea
+                    name="message"
                     rows={4}
                     className="w-full bg-brand-input-bg border border-brand-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-btn-primary/20 focus:bg-white transition-all resize-none text-brand-text-primary placeholder:text-brand-text-muted"
                     placeholder="Tell us how we can help..."
