@@ -206,13 +206,27 @@ export default function Services() {
             className="flex whitespace-nowrap gap-6 md:gap-10 py-5 overflow-x-auto scroll-smooth scrollbar-refined"
           >
             {serviceSections.map((section) => (
-              <a
+              <button
                 key={section.id}
-                href={`#${section.id}`}
+                onClick={() => {
+                  const el = document.getElementById(section.id);
+                  if (el) {
+                    const offset = 140; // Accounting for sticky headers
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = el.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
                 className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-text-muted hover:text-brand-btn-primary transition-all hover:scale-105"
               >
                 {section.title.split(' & ')[0]}
-              </a>
+              </button>
             ))}
           </div>
 
