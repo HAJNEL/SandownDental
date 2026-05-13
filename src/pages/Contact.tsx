@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock, Calendar, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Calendar, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Logo from '../components/Logo';
@@ -54,9 +54,9 @@ export default function Contact() {
             
             <div className="space-y-8">
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-brand-btn-primary shrink-0">
+                <a href="tel:0210073534" className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-red-600 hover:bg-red-50 transition-colors shrink-0 focus:outline-none focus:ring-2 focus:ring-red-400" title="Call Sandown Dental">
                   <Phone className="w-6 h-6" />
-                </div>
+                </a>
                 <div>
                   <div className="text-sm font-bold text-brand-text-muted uppercase tracking-widest mb-1">Phone</div>
                   <div className="text-lg font-serif font-bold text-brand-text-primary">021 007 3534</div>
@@ -65,19 +65,42 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-brand-btn-primary shrink-0">
+                <a href="mailto:sandowndental35@gmail.com" className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-red-600 hover:bg-red-50 transition-colors shrink-0 focus:outline-none focus:ring-2 focus:ring-red-400" title="Email Sandown Dental">
                   <Mail className="w-6 h-6" />
-                </div>
+                </a>
                 <div>
                   <div className="text-sm font-bold text-brand-text-muted uppercase tracking-widest mb-1">Email</div>
                   <div className="text-lg font-serif font-bold text-brand-text-primary">sandowndental35@gmail.com</div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-brand-btn-primary shrink-0">
-                  <MapPin className="w-6 h-6" />
+                <div className="flex items-start gap-5">
+                  <a
+                    href="https://wa.me/27722289376"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-red-600 hover:bg-red-50 transition-colors shrink-0 focus:outline-none focus:ring-2 focus:ring-red-400"
+                    title="Chat on WhatsApp"
+                  >
+                    <MessageCircle className="w-6 h-6" />
+                  </a>
+                  <div>
+                    <div className="text-sm font-bold text-brand-text-muted uppercase tracking-widest mb-1">WhatsApp</div>
+                    <a
+                      href="https://wa.me/27722289376"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-serif font-bold text-brand-text-primary hover:text-brand-btn-primary transition-colors"
+                    >
+                      +27 72 228 9376
+                    </a>
+                  </div>
                 </div>
+
+              <div className="flex items-start gap-5">
+                <a href="https://maps.app.goo.gl/jWbauEaTHHKptoPm8" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-surface rounded-2xl shadow-sm border border-brand-border flex items-center justify-center text-red-600 hover:bg-red-50 transition-colors shrink-0 focus:outline-none focus:ring-2 focus:ring-red-400" title="Open in Google Maps">
+                  <MapPin className="w-6 h-6" />
+                </a>
                 <div>
                   <div className="text-sm font-bold text-brand-text-muted uppercase tracking-widest mb-1">Address</div>
                   <a 
